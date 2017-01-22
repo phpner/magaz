@@ -41,15 +41,9 @@ get_header(); // Подключаем хедер?>
 	<div class="row">
 		<div class="col-md-9 col-xs-9">
 <?php woocommerce_content(); ?> 
-</div> 
+		</div> 
 		<div class="col-md-3 col-xs-3 ">	
-						<button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#menuRight">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-				<div class="collapse navbar-collapse" id="menuRight">
+				<div id="menuRight">
 				<p class="catP">Категории</p>
 						<?php
 						$args = array( // Выводим верхнее меню
@@ -62,6 +56,9 @@ get_header(); // Подключаем хедер?>
 
 						wp_nav_menu($args)
 						?>
+				</div>
+				<div class="col-md-12 col-xs-12 productRight">
+				<?php dynamic_sidebar("sidebar-1"); ?>
 				</div>
 		</div>
 	</div> 

@@ -1,201 +1,17 @@
-@import "compass/css3/border-radius";
 $color_link : #65911e;
+@import "compass/css3/transform";
+@import "compass/css3/transition";
+@import "compass/css3/border-radius";
+@import 'animate';
+@import 'carousel';
  @font-face {
     font-family: mytext; /* Имя шрифта */
     src: url(../fonts/Gabriela-Regular.ttf); /* Путь к файлу со шрифтом */
    }
-/* 
- *  Owl Carousel - Animate Plugin
- */
-.owl-carousel .animated {
-  -webkit-animation-duration: 1000ms;
-  animation-duration: 1000ms;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.owl-carousel .owl-animated-in {
-  z-index: 0;
-}
-.owl-carousel .owl-animated-out {
-  z-index: 1;
-}
-.owl-carousel .fadeOut {
-  -webkit-animation-name: fadeOut;
-  animation-name: fadeOut;
-}
 
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-/* 
- * 	Owl Carousel - Auto Height Plugin
- */
-.owl-height {
-  -webkit-transition: height 500ms ease-in-out;
-  -moz-transition: height 500ms ease-in-out;
-  -ms-transition: height 500ms ease-in-out;
-  -o-transition: height 500ms ease-in-out;
-  transition: height 500ms ease-in-out;
-}
-
-/* 
- *  Core Owl Carousel CSS File
- */
-.owl-carousel {
-  display: none;
- // width: 100%;
- margin-right: -15px !important;
-  -webkit-tap-highlight-color: transparent;
-  /* position relative and z-index fix webkit rendering fonts issue */
-  position: relative;
-  z-index: 1;
-}
-.owl-carousel .owl-stage {
-  position: relative;
-  -ms-touch-action: pan-Y;
-}
-.owl-carousel .owl-stage:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-.owl-carousel .owl-stage-outer {
-	height: 360px;
-  position: relative;
-  overflow: hidden;
-  /* fix for flashing background */
-  -webkit-transform: translate3d(0px, 0px, 0px);
-}
-.owl-carousel .owl-controls .owl-nav .owl-prev,
-.owl-carousel .owl-controls .owl-nav .owl-next,
-.owl-carousel .owl-controls .owl-dot {
-  cursor: pointer;
-  cursor: hand;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.owl-carousel.owl-loaded {
-  display: block;
-}
-.owl-carousel.owl-loading {
-  opacity: 0;
-  display: block;
-}
-.owl-carousel.owl-hidden {
-  opacity: 0;
-}
-.owl-carousel .owl-refresh .owl-item {
-  display: none;
-}
-.owl-carousel .owl-item {
-  position: relative;
-  min-height: 1px;
-  float: left;
-  -webkit-backface-visibility: hidden;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.owl-carousel .owl-item img {
-  display: block;
-  width: 100%;
-  -webkit-transform-style: preserve-3d;
-}
-.owl-carousel.owl-text-select-on .owl-item {
-  -webkit-user-select: auto;
-  -moz-user-select: auto;
-  -ms-user-select: auto;
-  user-select: auto;
-}
-.owl-carousel .owl-grab {
-  cursor: move;
-  cursor: -webkit-grab;
-  cursor: -o-grab;
-  cursor: -ms-grab;
-  cursor: grab;
-}
-.owl-carousel.owl-rtl {
-  direction: rtl;
-}
-.owl-carousel.owl-rtl .owl-item {
-  float: right;
-}
-
-/* No Js */
-.no-js .owl-carousel {
-  display: block;
-}
-
-/* 
- * 	Owl Carousel - Lazy Load Plugin
- */
-.owl-carousel .owl-item .owl-lazy {
-  opacity: 0;
-  -webkit-transition: opacity 400ms ease;
-  -moz-transition: opacity 400ms ease;
-  -ms-transition: opacity 400ms ease;
-  -o-transition: opacity 400ms ease;
-  transition: opacity 400ms ease;
-}
-.owl-carousel .owl-item img {
-  transform-style: preserve-3d;
-}
-.owl-dots{
-	text-align: center;
-	position: relative;
-	&:after{
-		content: ' ';
-		position: absolute;
-		border-bottom: 2px solid #65911e;
-		left: 0;
-		right: 0;
-		top: 9px;
-		z-index: -1;
-	}
-	.owl-dot{
-	display: inline-block;
-	span{
-		width: 10px;
-	    height: 10px;
-	    margin: 5px 7px;
-	    background: #D6D6D6;
-	    display: block;
-	   @include border-radius(30px);
-	}
-	}
-	.active{
-		background: $color_link;
-		@include border-radius(30px);		
-		}
-}
-//Карусель конец 
 *{
 	list-style-type: none;
+	text-decoration: none !important;
 }
 .top{
 	min-height: 60px;
@@ -301,14 +117,44 @@ $color_link : #65911e;
   }
 }
 .menuRight{
-	background: rgba(101, 145, 30, 0.57);
-	padding: 10px;
+	padding: 0px;
+	border-left: 1px dotted #65911e;
+	border-right: 1px dotted #65911e;
 	li{
+		/* border-bottom: 1px dotted;
+		padding: 8px 0 8px 0px; */
+		
 		a{
-			color: #fff;
+			color: #000;
 		    font-size: 16px;
 		    letter-spacing: 2px;
 		    font-family: mytext;
+		    width: 100%;
+    		border-bottom: 1px solid;
+		    padding: 8px;
+		    display: block;
+		    position: relative;
+		    overflow: hidden;
+		    @include transition(all .2s ease-in);
+		       &:before{
+		       	content: '';
+		       	width: 150%;
+		       	height: 3px;
+		       	display: block;
+		       	background: #fff;
+		       	position: absolute;
+		       	left: -80%;
+		       	@include transform(rotate(-50deg));
+		       	@include transition(all 1s ease-in);
+		      
+		       }
+		       	&:hover:before{
+		       		left: 50%;
+		       	}
+		       &:hover{
+			    background: #65911e;
+
+		}
 		}
 	}
 }
@@ -325,32 +171,36 @@ $color_link : #65911e;
 	.thumbnail{
 		    padding: 0 0 20px 0;
 		    position: relative;
+		    border-radius: 16% 16% 0 0;
+			-moz-border-radius: 16% 16% 0 0;
+			-webkit-border-radius: 16% 16% 0 0;
+
 	}
 	img{
 		height: 200px !important;
 		border-radius: 16%;
+		-moz-border-radius: 16%;
+		-webkit-border-radius: 16%;
 		border: 2px solid #65911e;
 	}
 	h3{
-		background: rgb(120, 120, 120);
+		background: #65911e;
 	    color: #fff;
 	    padding: 5px 0;
 	}
-	.add_to_cart_button{
+	.add_to_cart_button,.product_type_simple{
 		background: $color_link;
 		padding: 10px;
 		@include border-radius(5px); 
 		color: #fff;
-		float: right;
 		&:hover{
 			background: green;
 		}
 	}
 	.woocommerce-Price-amount{
 		font-size: 18px;
-		background: #65911e;
 		padding: 4px;
-		color: #fff
+		color: #000;
 	}
 	.wc-forward{
 		position: absolute;
@@ -359,5 +209,46 @@ $color_link : #65911e;
 		background: #65911e;;
 		padding: 6px;
 		bottom: 42px;
+	}
+}
+.footer{
+	background: rgb(239, 239, 239);;
+	padding: 10px;
+	border-top: 2px solid #65911e;
+	div{
+		padding: 20px;
+		&:last-child{
+			padding: 0px;
+		}
+	}
+}
+.sliderRight {
+	width: 100%;
+	li{
+		width: 100%;
+	}
+	.owl-stage-outer{
+	.owl-stage{
+	.woocommerce-Price-amount,.woocommerce-Price-currencySymbol{
+		display: none;
+	}
+	span{
+		font-family:mytext;
+		position: absolute;
+	    background: #65911e;
+	    color: #fff;
+	    left: 0;
+	    right: 0;
+	    margin: 0 auto;
+	    text-align: center;
+	    font-size: 1.3em;
+	}		
+
+	img{
+		width: 100%;
+		height: 150px;
+	}
+		}
+		
 	}
 }

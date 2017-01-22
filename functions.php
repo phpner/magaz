@@ -15,27 +15,11 @@ $phpner = (object) array(
    */
   'main'       => require 'inc/class-phpner.php'
 );
-var_dump($phpner);
-
-register_nav_menus( array( // Регистрируем 2 меню
-	'top' => 'Верхнее меню',
-	'right' => 'Правое'
-) );
-add_theme_support('post-thumbnails'); // Включаем поддержку миниатюр
-set_post_thumbnail_size(254, 190); // Задаем размеры миниатюре
-
-if ( function_exists('register_sidebar') ){
-function reg_sidebar(){
-	register_sidebars(1, array('name'=>'Foobar'));
-}
-
-add_action( 'widgets_init', 'reg_sidebar' );
-}
 
 
-add_theme_support( 'woocommerce' );
 
-    add_filter('add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
+
+add_filter('add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
  
 function woocommerce_header_add_to_cart_fragment(  ) {
 	global $woocommerce;

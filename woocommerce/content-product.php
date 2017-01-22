@@ -28,7 +28,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
   <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
+    <div class="thumbnail clearfix">
 <li <?php post_class(); ?>>
 	<?php
 	/**
